@@ -5,9 +5,9 @@ export const throwRequest = () =>{
 };
 
 export const changeMail = (mail: string)=>{
-    return {type: types.CHANGE_MAIL, payload: mail}
+    return {type: types.CHANGE_MAIL, payload: {mail}}
 };
 
 export const changePassword = (password: string) =>{
-    return {type: types.CHANGE_PASSWORD, payload: password}
+    return {type: types.CHANGE_PASSWORD, payload: {password}}
 };
