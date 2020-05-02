@@ -11,7 +11,7 @@ type ContextType = {
     state: State
 }
 
-const SignInContext = React.createContext<ContextType>({} as ContextType);
+export const SignInContext = React.createContext<ContextType>({} as ContextType);
 
 export const SignInContextProvider: React.FC = ({ children })=>{
     const [state, dispatch] = React.useReducer(reducer, initialState);
