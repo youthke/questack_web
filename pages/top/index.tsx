@@ -1,6 +1,6 @@
 import {NextPage} from "next";
 import React from "react";
-import {Top} from "../../coponents/Top";
+import {Top} from "../../components/Top";
 
 type Props = {}
 

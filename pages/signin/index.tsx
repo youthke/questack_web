@@ -1,6 +1,6 @@
 import {NextPage} from "next";
 import React from "react";
-import {WrappedSignIn} from "../../coponents/SignIn";
+import {WrappedSignIn} from "../../components/SignIn";
 
 type Props = {}
 
