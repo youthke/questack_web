@@ -42,7 +42,7 @@ export const SignUp = (props: Props) =>{
                             <Card>
                                 <div>
                                     <Title level={2}>
-                                        質問しやすい環境づくりをQuestackで
+                                        サインアップ
                                     </Title>
                                     <div>
                                         <p>質問を募集する</p>

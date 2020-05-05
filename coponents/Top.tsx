@@ -18,7 +18,7 @@ export const Top = () =>{
                                 <div>
                                     <Button>
                                      <Link href={"/questack/signup"}>
-                                         サインアップはこちらから
+                                        <a>サインアップ</a>
                                      </Link>
                                     </Button>
                                 </div>

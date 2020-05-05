@@ -7,7 +7,7 @@ interface Props extends WrappedFormInternalProps{}
 const SignIn = (props: Props)  =>{
     const {onChangeMail, onChangePassword, onSubmit, state} = React.useContext(SignInContext);
 
-    const {getFieldDecorator} = props.form
+    const {getFieldDecorator} = props.form;
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
         props.form.validateFields( async (err, values)=>{
