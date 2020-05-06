@@ -29,7 +29,7 @@ const SignIn = (props: Props)  =>{
                                       サインイン
                                   </Typography.Title>
                                   <div>
-                                      <Form>
+                                      <Form onSubmit={handleSubmit}>
                                           <Form.Item>
                                               {getFieldDecorator("mail",{
                                                   rules:[
