@@ -5,7 +5,7 @@ import {changeQuestionerName, changeQuestionTitle, changeQuestionContent, throwR
 type ContextType = {
     onChangeQuestionerName: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onChangeQuestionTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    onChangeQuestionContent: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChangeQuestionContent: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     onSubmit: (questionerName: string, title: string, content: string) => void;
     state: State
 }
@@ -23,7 +23,7 @@ export const QuestionCreateContextProvider: React.FC = ({ children})=>{
         dispatch(changeQuestionTitle(e.target.value))
     };
 
-    const onChangeQuestionContent = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    const onChangeQuestionContent = (e: React.ChangeEvent<HTMLTextAreaElement>) =>{
         dispatch(changeQuestionContent(e.target.value))
     };
 
