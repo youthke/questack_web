@@ -26,6 +26,9 @@ module.exports = withCss({
         }
         return config;
     },
+    env: {
+        server: "http://localhost:8888/questack-api"
+    },
     experimental: {
         basePath: "/questack"
     }
