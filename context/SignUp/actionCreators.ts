@@ -18,3 +18,11 @@ export const changePassword = (password: string) =>{
 export const changePasswordConfirmation = (passwordConfirmation: string) =>{
     return {type: types.CHANGE_PASSWORD_CONFIRMATION, payload: {passwordConfirmation}}
 };
+
+export const success = (message: string) => {
+    return {type: types.SUCCESS, payload: {message}};
+};
+
+export const failed = (message: string) => {
+    return {type: types.FAILED, payload: {message}}
+}
