@@ -5,12 +5,13 @@ import Router from "next/router"
 
 
 export const auth = async  (ctx: next.NextPageContext) =>{
-    const { token } = Cookie(ctx);
-    if (ctx.res && !token) {
-        ctx.res.writeHead(302, {Location:"/questack/login"});
+    const  {questack_token}  = Cookie(ctx);
+
+    if (ctx.res && !questack_token) {
+        ctx.res.writeHead(302, {Location:"/questack/signin"});
         ctx.res.end();
-    }else if(!token){
-        await Router.push("/questack/login");
+    }else if(!questack_token){
+        await Router.push("/questack/signin");
     }
 };
 

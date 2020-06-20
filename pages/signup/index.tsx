@@ -7,11 +7,11 @@ import Router from "next/router";
 type Props = {}
 
 const FirstPage: NextPage<Props> = () => {
-    const {state} = React.useContext(SignUpContext)
+    const {state} = React.useContext(SignUpContext);
     React.useEffect(()=>{
         const func = async () =>{
             if (state.success){
-                await Router.push("/top")
+                await Router.push("/home")
             }
         };
         func()
