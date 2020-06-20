@@ -11,3 +11,11 @@ export const changeMail = (mail: string)=>{
 export const changePassword = (password: string) =>{
     return {type: types.CHANGE_PASSWORD, payload: {password}}
 };
+
+export const success = (message: string) =>{
+    return {type: types.SUCCESS, payload: {message}}
+};
+
+export const failed = (message: string) => {
+    return {type: types.FAILED, payload: {message}}
+};

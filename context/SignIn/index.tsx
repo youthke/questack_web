@@ -1,6 +1,7 @@
 import * as React from "react";
 import {initialState, reducer, State} from "./reducer";
 import {changeMail,changePassword, throwRequest} from "./actionCreators"
+import {signIn} from "./api";
 
 
 
@@ -22,9 +23,10 @@ export const SignInContextProvider: React.FC = ({ children })=>{
         dispatch(changePassword(e.target.value));
     };
 
-    const onSubmit = (mail: string, password: string) =>{
-        console.log("at submit", mail, password)
-    }
+    const onSubmit = async (mail: string, password: string) =>{
+        const func = signIn(mail, password);
+        await func(dispatch)
+    };
 
     return (
         <SignInContext.Provider
@@ -39,6 +41,5 @@ export const SignInContextProvider: React.FC = ({ children })=>{
         >
             {children}
         </SignInContext.Provider>
-    )
-
-}
+    );
+};
