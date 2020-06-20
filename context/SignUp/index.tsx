@@ -1,6 +1,7 @@
 import * as React from "react";
 import {initialState, reducer, State} from "./reducer";
 import {changeMail, changeName, changePassword, changePasswordConfirmation} from "./actionCreators";
+import {signUp} from "./api";
 
 type ContextType = {
     onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -27,8 +28,9 @@ export const SignUpProvider: React.FC = ({children})=>{
   const onChangePasswordConfirmation = (e: React.ChangeEvent<HTMLInputElement>) =>{
       dispatch(changePasswordConfirmation(e.target.value))
   };
-   const onSubmit = (name: string, mail: string, password: string) =>{
-      console.log(name,mail,password)
+   const onSubmit = async (name: string, mail: string, password: string) =>{
+       const func = signUp(name, mail, password);
+       await func(dispatch);
    };
 
    return (

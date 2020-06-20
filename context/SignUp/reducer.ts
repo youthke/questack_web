@@ -9,17 +9,21 @@ export type State = {
     mail: string;
     password: string;
     passwordConfirmation: string;
+    message: string;
+    success: boolean;
 }
 
 type Actions = CreatorsToActions<typeof creators>
 
-const initialState = {
+const initialState : State= {
     isLoading: false,
     isInvalid: false,
     name: "",
     mail: "",
     password: "",
-    passwordConfirmation: ""
+    passwordConfirmation: "",
+    message: "",
+    success: false
 };
 
 const reducer = (state: State, actions: Actions) =>{
@@ -33,7 +37,11 @@ const reducer = (state: State, actions: Actions) =>{
         case types.CHANGE_PASSWORD:
             return {...state, password: actions.payload.password};
         case types.CHANGE_PASSWORD_CONFIRMATION:
-            return {...state, passwordConfirmation: actions.payload.passwordConfirmation}
+            return {...state, passwordConfirmation: actions.payload.passwordConfirmation};
+        case types.SUCCESS:
+            return {...state, isLoading: false, isInvalid: false, message: actions.payload.message, success: true};
+        case types.FAILED:
+            return {...state, isLoading: false, isInvalid: true, message: actions.payload.message};
         default:
             throw new Error();
     }

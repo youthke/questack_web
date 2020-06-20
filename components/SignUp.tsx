@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Button, Card, Col, Form, Input, Layout, Row, Typography} from "antd";
+import {Button, Card, Col, Form, Icon, Input, Layout, Row, Spin, Typography} from "antd";
 import {SignUpContext} from "../context/SignUp";
 import {WrappedFormInternalProps} from "antd/lib/form/Form";
 
@@ -115,9 +115,11 @@ export const SignUp = (props: Props) =>{
                                                 )}
                                             </Form.Item>
                                             <Form.Item>
-                                                <Button type={"primary"} htmlType={"submit"}>
+                                                {state.isLoading ?
+                                                    <Spin indicator={<Icon type={"loading"}></Icon>}/>
+                                                    :<Button type={"primary"} htmlType={"submit"} disabled={state.isLoading}>
                                                     Submit
-                                                </Button>
+                                                </Button>}
                                             </Form.Item>
                                         </Form>
                                     </div>
