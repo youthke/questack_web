@@ -4,6 +4,7 @@ import {SignInContextProvider} from "./SignIn";
 import {QuestionCreateContextProvider} from "./questions/Create";
 import {QuestionsContextProvider} from "./questions/Index";
 import {HomeContextProvider} from "./Home";
+import {CreateStackProvider} from "./stacks/create";
 
 export const ContextProvider : React.FC<React.Props<{}>> = ({ children }) =>{
     return (
@@ -12,7 +13,9 @@ export const ContextProvider : React.FC<React.Props<{}>> = ({ children }) =>{
                 <QuestionCreateContextProvider>
                     <QuestionsContextProvider>
                         <HomeContextProvider>
-                            {children}
+                            <CreateStackProvider>
+                                {children}
+                            </CreateStackProvider>
                         </HomeContextProvider>
                     </QuestionsContextProvider>
                 </QuestionCreateContextProvider>
