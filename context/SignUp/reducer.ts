@@ -15,7 +15,7 @@ export type State = {
 
 type Actions = CreatorsToActions<typeof creators>
 
-const initialState : State= {
+const initialState : State = {
     isLoading: false,
     isInvalid: false,
     name: "",
