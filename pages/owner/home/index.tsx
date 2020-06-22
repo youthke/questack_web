@@ -1,11 +1,11 @@
 import {NextPage, NextPageContext} from "next";
 import React from "react";
-import {Home} from "../../components/Home";
-import {auth} from "../../util";
-import {getStacks} from "../../api/getStacks";
+import {Home} from "../../../components/Home";
+import {auth} from "../../../util";
+import {getStacks} from "../../../api/getStacks";
 import Cookies from "next-cookies";
-import {Stack} from "../../model/stack";
-import {HomeContext} from "../../context/Home";
+import {Stack} from "../../../model/stack";
+import {HomeContext} from "../../../context/Home";
 
 type Props = {
     stacks: Stack[];

@@ -1,9 +1,9 @@
 import {NextPage, NextPageContext} from "next";
-import {WrappedCreate} from "../../../components/stacks/Create";
+import {WrappedCreate} from "../../../../components/stacks/Create";
 import Cookie from "next-cookies"
 import React from "react";
-import {auth} from "../../../util";
-import {CreateStackContext} from "../../../context/stacks/create";
+import {auth} from "../../../../util";
+import {CreateStackContext} from "../../../../context/stacks/create";
 import Router from "next/router";
 
 type Props = {
