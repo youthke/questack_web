@@ -15,7 +15,12 @@ export const Home = () =>{
             title: "name",
             dataIndex: "name",
             key: "name",
-            width: 200
+            width: 200,
+            render: (name: string) =>{
+                return <div>
+                    {name}
+                </div>
+            }
         }
     ];
     return(
@@ -35,7 +40,7 @@ export const Home = () =>{
                             fontSize: "6vw"
                         }}
                     >
-                        Save Your Materials.
+                        Stacks
                     </Typography.Title>
                 </div>
             </div>
