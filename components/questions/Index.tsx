@@ -2,12 +2,11 @@ import * as React from "react";
 import {QuestionsContext} from "./../../context/questions/Index"
 import {Question} from "../../model/question";
 import {Avatar, Card, Col, Icon, Layout, List, Row, Table, Typography} from "antd";
-import {QuestionOutlined} from "@ant-design/icons"
 import Link from "next/link";
 
 export const Index = () => {
     const { state }  = React.useContext(QuestionsContext);
-    const dataSource = state.questions.map((q: Question, index: number)=>{
+    const dataSource = state.stack.questions.map((q: Question, index: number)=>{
         return {
             key: index,
             id: q.question_id,

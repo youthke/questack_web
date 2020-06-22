@@ -1,6 +1,7 @@
 import * as React from "react";
-import {Col, Layout, Typography, Row, Card, Table} from "antd";
+import {Col, Layout, Typography, Row, Card, Table, Button} from "antd";
 import {HomeContext} from "../context/Home";
+import Router from "next/router";
 
 export const Home = () =>{
     const {state} = React.useContext(HomeContext);
@@ -52,6 +53,13 @@ export const Home = () =>{
                                 <Typography.Title level={3} style={{ marginLeft: 10, marginBottom: 25 }}>
                                     stacks
                                 </Typography.Title>
+                                <div>
+                                    <Button onClick={() =>{
+                                        Router.push("/questack/stacks/new")
+                                    }}>
+                                        New Stack
+                                    </Button>
+                                </div>
                                 <Table
                                     dataSource={dataSource}
                                     columns={columns}

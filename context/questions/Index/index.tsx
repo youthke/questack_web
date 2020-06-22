@@ -1,10 +1,10 @@
 import * as React from "react";
 import {initialState, reducer, State} from "./reducer";
-import { setQuestions } from "./actionCreators";
-import {Question} from "../../../model/question";
+import {setStack} from "./actionCreators";
+import {Stack} from "../../../model/stack";
 
 type ContextType = {
-    setState: (questions: Question[]) => void;
+    setState: (stack: Stack) => void;
     state: State
 }
 
@@ -14,8 +14,8 @@ export const QuestionsContext = React.createContext<ContextType>({} as ContextTy
 export const QuestionsContextProvider: React.FC = ({ children }) =>{
     const [state, dispatch] = React.useReducer(reducer, initialState);
 
-    const setState = (questions: Question[]) =>{
-        dispatch(setQuestions(questions));
+    const setState = (stack: Stack) =>{
+        dispatch(setStack(stack));
     };
 
     return(

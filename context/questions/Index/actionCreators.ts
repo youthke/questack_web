@@ -1,6 +1,6 @@
 import * as types from "./actionTypes"
-import {Question} from "../../../model/question";
+import {Stack} from "../../../model/stack";
 
-export const setQuestions = (questions: Question[])=>{
-    return {type: types.SET_QUESTIONS, payload: { questions }};
+export const setStack = (stack: Stack)=>{
+    return {type: types.SET_STACK, payload: { stack }};
 };
