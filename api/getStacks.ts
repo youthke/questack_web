@@ -12,5 +12,5 @@ export const getStacks = async (token: string): Promise<response> =>{
             Authorization: token
         }
     });
-    return resp.data.stacks;
+    return resp.data;
 };
