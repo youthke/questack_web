@@ -1,1 +1,1 @@
-export const SET_QUESTIONS = "SET_QUESTIONS" as const;
+export const SET_STACK = "SET_QUESTIONS" as const;
