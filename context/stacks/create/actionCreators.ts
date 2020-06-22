@@ -5,7 +5,7 @@ export const throwRequest = () =>{
 };
 
 export const changeName = (name: string) =>{
-    return {type: types.CHANGE_NAME};
+    return {type: types.CHANGE_NAME, payload: {name} };
 };
 
 export const success = (message: string) =>{
@@ -15,3 +15,7 @@ export const success = (message: string) =>{
 export const failed = (message: string) => {
     return {type: types.FAILED, payload: {message}}
 };
+
+export const setToken = (token: string) => {
+    return {type: types.SET_TOKEN, payload: {token}}
+}

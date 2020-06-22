@@ -1,11 +1,12 @@
-import {initialState, reducer, State} from "./reducer";
 import * as React from "react";
-import {changeName} from "./actionCreators";
+import {initialState, reducer, State} from "./reducer";
+import {changeName, setToken} from "./actionCreators";
 import {postRequest} from "./api";
 
 type ContextType = {
     onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    onSubmit: (name: string) => void;
+    onSubmit: (name: string, token: string) => void;
+    onSetToken: (token: string) => void;
     state: State
 }
 
@@ -16,16 +17,20 @@ export const CreateStackProvider: React.FC = ({children}) => {
     const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(changeName(e.target.value));
     };
-    const onSubmit = async (name: string) =>{
-        const func = postRequest(name);
+    const onSubmit = async (name: string, token: string) =>{
+        const func = postRequest(name, token);
         await func(dispatch);
     };
 
+    const onSetToken = (token: string) =>{
+        dispatch(setToken(token));
+    }
     return (
         <CreateStackContext.Provider
             value={{
                 onChangeName,
                 onSubmit,
+                onSetToken,
                 state
             }}
         >

@@ -7,13 +7,17 @@ type Payload = {
     name: string
 }
 
-export const postRequest = (name: string) => {
+export const postRequest = (name: string, token: string) => {
     return async (dispatch: (value: any) => void) =>{
         try{
         const payload: Payload = {
             name: name
         };
-        await Axios.post("/stack/create", payload);
+            await Axios.post("/stack", payload,{
+                headers: {
+                    Authorization: token
+                }
+        });
         dispatch(success(CreateStackMessage.success));
         }catch (e) {
             dispatch(failed(CreateStackMessage.error));

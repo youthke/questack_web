@@ -4,6 +4,7 @@ import {CreatorsToActions} from "../../creatorToActions";
 
 export type State = {
     name: string;
+    token: string;
     isLoading: boolean;
     isInvalid: boolean;
     success: boolean;
@@ -12,8 +13,9 @@ export type State = {
 type Actions = CreatorsToActions<typeof creators>
 
 
-const initialState: State = {
+const initialState : State = {
     name: "",
+    token: "",
     isLoading: false,
     isInvalid: false,
     success: false
@@ -22,9 +24,15 @@ const initialState: State = {
 const reducer = (state: State, actions: Actions) => {
     switch (actions.type) {
         case types.THROW_REQUEST:
-            return {type: types.THROW_REQUEST, isLoading: true}
+            return {...state, isLoading: true};
         case types.CHANGE_NAME:
-            return {type: types.CHANGE_NAME, name: actions}
+            return {...state, name: actions.payload.name};
+        case types.SET_TOKEN:
+            return {...state, token: actions.payload.token};
+        case types.SUCCESS:
+            return {...state, isLoading: false, success: true};
+        case types.FAILED:
+            return {...state, isLoading: false, isInvalid: true};
     }
 };
 
