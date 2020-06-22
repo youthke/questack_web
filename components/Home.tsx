@@ -8,6 +8,7 @@ export const Home = () =>{
     const dataSource = state.stacks.map((stack, index)=>{
         return {
             key: index,
+            id: stack.id,
             name: stack.name
         }
     });
@@ -17,11 +18,12 @@ export const Home = () =>{
             dataIndex: "name",
             key: "name",
             width: 200,
-            render: (name: string) =>{
-                return <div>
-                    {name}
-                </div>
-            }
+        },
+        {
+            title: "id",
+            dataIndex: "id",
+            key: "id",
+            width: 200
         }
     ];
     return(
@@ -55,7 +57,7 @@ export const Home = () =>{
                                 </Typography.Title>
                                 <div>
                                     <Button onClick={() =>{
-                                        Router.push("/questack/stacks/new")
+                                        Router.push("/questack/owner/stacks/new")
                                     }}>
                                         New Stack
                                     </Button>
