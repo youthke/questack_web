@@ -1,7 +1,7 @@
 /* eslint-disable */
 const withCss = require("@zeit/next-css");
 
-// const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === "production";
 module.exports = withCss({
     webpack: (config, { isServer }) => {
         if (isServer) {
@@ -27,7 +27,8 @@ module.exports = withCss({
         return config;
     },
     env: {
-        server: "http://localhost:8888/questack-api"
+        server: "http://localhost:8888/questack-api",
+        domainName: isProd ? "" : "http://localhost:8888"
     },
     experimental: {
         basePath: "/questack"
