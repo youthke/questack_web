@@ -28,7 +28,7 @@ module.exports = withCss({
     },
     env: {
         server: "http://localhost:8888/questack-api",
-        domainName: isProd ? "" : "http://localhost:8888"
+        domainName: isProd ? "" : "http://localhost:3000"
     },
     experimental: {
         basePath: "/questack"

@@ -11,7 +11,7 @@ const SignInPage: NextPage<Props> = () => {
     React.useEffect(() =>{
         const func = async () => {
             if (state.success){
-              await Router.push("/questack/home");
+              await Router.push("/questack/owner/home");
             }
         };
         func()
