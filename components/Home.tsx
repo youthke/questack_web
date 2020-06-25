@@ -1,6 +1,5 @@
 import * as React from "react";
 import {Col, Layout, Typography, Row, Card, Table, Button} from "antd";
-import CopyToClipboard from 'react-copy-to-clipboard';
 import {HomeContext} from "../context/Home";
 import Router from "next/router";
 
@@ -21,20 +20,10 @@ export const Home = () =>{
             width: 200,
         },
         {
-            title: "url",
+            title: "id",
             dataIndex: "id",
             key: "id",
-            width: 200,
-            render: (id: string) =>{
-                return (
-                    <div>
-                        {`${process.env.domainName}/questack/${id}/questions`}
-                    <CopyToClipboard text={`${process.env.domainName}/questack/${id}/questions`}>
-                        <Button>copy</Button>
-                    </CopyToClipboard>
-                    </div>
-                )
-            }
+            width: 200
         }
     ];
     return(

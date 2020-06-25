@@ -20,13 +20,15 @@ const HomePage: NextPage<Props> = (props: Props) => {
         <div>
             <Home/>
         </div>
-    );
+    )
 };
 
 HomePage.getInitialProps = async (ctx: NextPageContext) => {
     await auth(ctx);
     const { questack_token } = Cookies(ctx) as Record<string, string>;
     const result = await getStacks(questack_token);
+    console.log(result);
+    console.log(result.stacks);
     return {
         stacks: result.stacks
     };
