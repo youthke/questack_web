@@ -12,7 +12,7 @@ const Create = (props: Props) =>{
         e.preventDefault();
         props.form.validateFields( async (err, values) =>{
             if(!err){
-                await onSubmit(state.questionerName, state.title, state.content)
+                await onSubmit(state.stackID,state.questionerName, state.title, state.content)
             }
         })
     };
