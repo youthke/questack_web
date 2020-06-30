@@ -22,6 +22,13 @@ export const Top = () =>{
                                      </Link>
                                     </Button>
                                 </div>
+                                <div>
+                                    <Button>
+                                        <Link href={"/questack/signin"}>
+                                            <a>サインイン</a>
+                                        </Link>
+                                    </Button>
+                                </div>
                             </Card>
                         </Col>
                     </Row>
