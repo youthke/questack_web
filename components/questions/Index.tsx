@@ -1,11 +1,12 @@
 import * as React from "react";
 import {QuestionsContext} from "./../../context/questions/Index"
 import {Question} from "../../model/question";
-import {Avatar, Card, Col, Icon, Layout, List, Row, Table, Typography} from "antd";
+import {Avatar, Button, Card, Col, Icon, Layout, List, Row, Table, Typography} from "antd";
 import Link from "next/link";
 
 export const Index = () => {
     const { state }  = React.useContext(QuestionsContext);
+     console.log(state);
     const dataSource = state.stack.questions.map((q: Question, index: number)=>{
         return {
             key: index,
@@ -26,8 +27,13 @@ export const Index = () => {
                                 <Col>
                                     <Card>
                                         <Typography.Title>
-                                            質問一覧
+                                            {state.stack.name}
                                         </Typography.Title>
+                                        <Button>
+                                            <Link href={"questions/create"}>
+                                                <a>質問を作成する</a>
+                                            </Link>
+                                        </Button>
                                         <List itemLayout={"vertical"}
                                               size={"large"}
                                               dataSource={dataSource}

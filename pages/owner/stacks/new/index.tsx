@@ -18,7 +18,7 @@ const CreateStackPage: NextPage<Props> = (props: Props) =>{
     React.useEffect(() =>{
         const func = async () => {
             if (state.success){
-                await Router.push("/home")
+                await Router.push("/questack/owner/home")
             }
         };
         func()
