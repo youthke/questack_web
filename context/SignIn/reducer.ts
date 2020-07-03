@@ -33,7 +33,7 @@ const reducer = (state: State, actions: Actions) =>{
         case types.SUCCESS:
             return {...state, isLoading: false, success: true, message: actions.payload.message};
         case types.FAILED:
-            return {...state, isLoading: false, isInvalid: false, message: actions.payload.message};
+            return {...state, isLoading: false, isInvalid: true, message: actions.payload.message};
         default:
             throw new Error();
     }

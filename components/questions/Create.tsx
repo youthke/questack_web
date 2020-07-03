@@ -1,7 +1,7 @@
 import * as React from "react";
 import {WrappedFormInternalProps} from "antd/lib/form/Form";
 import {QuestionCreateContext} from "../../context/questions/Create";
-import {Button, Card, Col, Form, Input, Layout, Row, Typography} from "antd";
+import {Alert, Button, Card, Col, Form, Input, Layout, Row, Typography} from "antd";
 
 interface Props extends WrappedFormInternalProps{}
 const Create = (props: Props) =>{
@@ -76,6 +76,16 @@ const Create = (props: Props) =>{
                                                 </Button>
                                             </Form.Item>
                                         </Form>
+                                        {state.message && (
+                                            <Row type="flex" justify="center">
+                                                <Col span={9}>
+                                                    <Alert
+                                                        type={state.isInvalid ? "error" : "success"}
+                                                        message={state.message}
+                                                    />
+                                                </Col>
+                                            </Row>
+                                        )}
                                     </div>
                                 </div>
                             </Card>
