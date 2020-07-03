@@ -12,7 +12,7 @@ questack-apiの起動は[こちら](https://github.com/youthke/questack-api)
 yarn dev
 ```
 
-すると[localhost:3000](http://localhost:3000/questack/top)でページを確認できます.
+すると[localhost:3000/questack/top](http://localhost:3000/questack/top)でページを確認できます.
 
 # システム概要
 
