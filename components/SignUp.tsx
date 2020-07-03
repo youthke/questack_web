@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Button, Card, Col, Form, Icon, Input, Layout, Row, Spin, Typography} from "antd";
+import {Alert, Button, Card, Col, Form, Icon, Input, Layout, Row, Spin, Typography} from "antd";
 import {SignUpContext} from "../context/SignUp";
 import {WrappedFormInternalProps} from "antd/lib/form/Form";
 
@@ -122,6 +122,17 @@ export const SignUp = (props: Props) =>{
                                                 </Button>}
                                             </Form.Item>
                                         </Form>
+                                        {state.message && (
+                                            <Row type="flex" justify="center">
+                                                <Col span={9}>
+                                                    <Alert
+                                                        type={state.isInvalid ? "error" : "success"}
+                                                        message={state.message}
+                                                        showIcon
+                                                    />
+                                                </Col>
+                                            </Row>
+                                        )}
                                     </div>
                                 </div>
                             </Card>
