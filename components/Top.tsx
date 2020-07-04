@@ -16,18 +16,35 @@ export const Top = () =>{
                                     </Typography.Title>
                                 </div>
                                 <div>
-                                    <Button>
+                                    <Button style={{margin: "1em"}}>
                                      <Link href={"/questack/signup"}>
                                         <a>サインアップ</a>
                                      </Link>
                                     </Button>
                                 </div>
                                 <div>
-                                    <Button>
+                                    <Button style={{margin: "1em"}}>
                                         <Link href={"/questack/signin"}>
                                             <a>サインイン</a>
                                         </Link>
                                     </Button>
+                                </div>
+                                <div>
+                                    <Card
+                                        style={{
+                                            width: "35em",
+                                            height: "30em",
+                                            margin: "1em"
+                                        }}
+                                    >
+                                        <img src={"/stack.png"} style={{width: "80%", height: "auto", marginLeft: "auto", marginRight: "auto"}}/>
+                                        <Typography.Title level={2}>URLを貼るだけで質問募集</Typography.Title>
+                                        <div>
+                                            <p>stackは質問を募集する箱です</p>
+                                            <p>stackを作成するのURLが発行されます</p>
+                                            <p>URLを知っている人だけが質問をすることができます</p>
+                                        </div>
+                                    </Card>
                                 </div>
                             </Card>
                         </Col>
